@@ -25,6 +25,9 @@ Install Sass - https://sass-lang.com/install
   * Grid Game: https://cssgridgarden.com/
   * Google Fonts: https://fonts.google.com/
   * Transitions and Transforms: https://thoughtbot.com/blog/transitions-and-transforms
+  * CSS Reference: https://cssreference.io/
+  * CSS Flexbox Cheatsheet: https://devhints.io/css-flexbox
+  * HTML and CSS is Hard (but it doesn't have to be): https://internetingishard.com/html-and-css/
 
 
 ## Key Vocabulary:
