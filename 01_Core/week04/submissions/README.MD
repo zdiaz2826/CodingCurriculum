@@ -1,1 +1,1 @@
-Add this week's toy problem solutions to this directory.
+Add the ecommerce site to this directory.
