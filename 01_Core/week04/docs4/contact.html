@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>Contact Page</title>
+        <link rel="stylesheet" type="text/css" href="normalized.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <!--Navigation Bar -->
+        <div class="topnav" id="myTopnav">
+            <a href="index.html" class="active">Home</a>
+            <a href="products.html">Products</a>
+            <a href="search.html">Search</a>
+            <a href="contact.html">Contact</a>
+            <div class="dropdown">
+                <button class="dropbtn"></button> 
+            </div> 
+            <a href="javascript:void(0);" class="icon" onclick="navFunction()">&#9776;</a>
+        </div>
+        <!-- contact page -->
+        <div>
+            <form class="contact-form" name="contact-form" id="contact-form" onsubmit=" return checkForm()">
+                <!-- personal info -->
+                <label for="first-name" class="firstName">First Name:</label>
+                <input type="text" name="first-name" id="first-name">
+                <label for="last-name" class="lastName">Last Name:</label>
+                <input type="text" name="last-name" id="last-name">
+                <label for="e-mail" class="email" >E-mail:</label>
+                <input type="email" name="e-mail" id="e-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <label for="phone" class="phone-num" >phone:</label>
+                <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx">
+                <!-- radio buttons -->
+                <p class="preferred">Preferred Contact Method:</p>
+                <label for="by-phone" class="byPhone">
+                <input type="radio" name="by-phone" value="phone" id="by-phone">Phone
+                </label>
+                <label for="by-email" class="byEmail">
+                <input type="radio" name="by-email" value="email" id="by-email" >E-mail
+                </label>
+                <!-- check boxes -->
+                <p class="checkboxes">How did you hear about us?</p>
+                <label for="WOM" class="WOM">
+                <input type="checkbox" name="W-O-M" value="W-O-M" id="WOM">Word of Mouth
+                </label>
+                <label for="conference" class="conf">
+                <input type="checkbox" name="conference" id="conference">Conference
+                </label>
+                <label for="Radio" class="Radio-checkbox">
+                <input type="checkbox" name="Radio" value="Radio" id="Radio">Radio
+                </label>
+                <label for="TV" class="Television">
+                <input type="checkbox" name="TV" value="TV" id="TV">TV
+                </label>
+                <!-- message text area and button -->
+                <label for="comments" class="message"> Message:</label>
+                <textarea name="comments" id="comments" placeholder="Write a comment"></textarea>
+                <input type="submit" value=submit  name="contact" id="contact">
+            </form>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
