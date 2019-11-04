@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title> Search Page</title>
+        <link rel="stylesheet" type="text/css" href="normalized.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <!-- Navigation Bar -->
+        <div class="topnav" id="myTopnav">
+            <a href="index.html" class="active">Home</a>
+            <a href="products.html">Products</a>
+            <a href="search.html">Search</a>
+            <a href="contact.html">Contact</a>
+            <div class="dropdown">
+                <button class="dropbtn"></button> 
+            </div> 
+            <a href="javascript:void(0);" class="icon" onclick="navFunction()">&#9776;</a>
+        </div>
+            <!--Search Form -->
+            <form class="search-form">
+                <label class="search-label" for="searchInput"> What are you looking for?</label>
+                <input type="text" id="searchInput" name="searchInput" placeholder="Search..." onkeyup="searchFunction()" >
+                <!-- Select price -->
+                <label class="price-label" for="select-price"> What's your budget? </label>
+                <select name="selec-price" id="select-price" class="select-price">
+                    <option>$5.00 - $10.00</option>
+                    <option>$10.00 - $20.00</option>
+                    <option>$20.00 - $30.00</option>
+                </select>
+                <!-- seletc category -->
+                <label class="category-label" for="hair-products"> Category:</label>
+                <select name="hair-products" id="hair-products" class="category">
+                    <option value="shampoo">Shampoo</option>
+                    <option value="conditioner">Conditioner</option>
+                    <option value="hair-spray">Hair Spray</option>
+                    <option value="mousse">Mousse</option>
+                </select>
+                <input type="submit" id="continue-btn" name="continue-btn" class="submit-btn">
+            </form> 
+        <script src="script.js"></script> 
+    </body>
+</html> 
