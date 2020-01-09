@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>My Products</title>
+        <link rel="stylesheet" type="text/css" href="normalized.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <!-- Navigation Bar -->
+        <div class="topnav" id="myTopnav">
+            <a href="index.html" class="active">Home</a>
+            <a href="products.html">Products</a>
+            <a href="search.html">Search</a>
+            <a href="contact.html">Contact</a>
+            <div class="dropdown">
+                <button class="dropbtn"></button>
+            </div> 
+            <a href="javascript:void(0);" class="icon" onclick="navFunction()">&#9776;</a>
+        </div>
+        <!-- Sort Menu-->
+            <form class="select-product">
+                <label for="hairproducts" class="select-text">Choose Product:</label>
+                <select  id="hairproducts" name="hairproducts" class="choose-product">
+                    <option value="shampoo">Shampoo</option>
+                    <option value="conditioner">Conditioner</option>
+                    <option value="hair-spray">Hair Spray</option>
+                    <option value="mousse">Mousse</option>
+                </select>
+            </form>
+        <!-- All Products -->
+       <div class="products-container">
+            <figure> 
+                <a href="details.html"><img class="products" src="shampoo1.jpg" alt="shampoo bottle"/></a>
+                <figcaption> TRESemme Color Revitalize Protection Shampoo $5.00</figcaption>
+            </figure> 
+            <figure>
+                <a href="details.html"><img class="products"  src="shampoo2.jpg" alt="shampoo bottle"/></a>
+                <figcaption> Love Beauty and Planet Murumuru Color Shampoo $6.00</figcaption>
+            </figure> 
+            <figure>
+                <a href="details.html"><img class="products"  src="conditioner1.jpg" alt="conditioner bottle"/></a>
+                <figcaption>Pantene Pro-V Daily Moisture Renewal Conditioner $15.00</figcaption>
+            </figure>
+            <figure>
+                <a href="details.html"><img class="products" src="conditioner2.jpg" alt="conditioner bottle"/></a>
+                <figcaption>Garnier Fructis Sleek & Shine $20.00 </figcaption>
+            </figure>  
+            <figure>
+                <a href="details.html"><img class="products" src="hairspray1.jpg" alt="hair spray bottle"/></a>
+                <figcaption>TRESemme Tres Two Extra Firm Control Hair Spray $25.00</figcaption>
+            </figure>
+            <figure>
+                <a href="details.html"><img class="products" src="hairspray2.jpg" alt="hair spray bottle"/></a>
+                <figcaption>Suave Max Hold Unscented Hair Spray $6.00</figcaption>
+            </figure>
+            <figure>
+                <a href="details.html"><img class="products" src="mousse1.jpg" alt="mousse bottle"/></a>
+                <figcaption>Volume Rose Mousse $12.00</figcaption>
+            </figure>   
+            <figure>
+                <a href="details.html"><img class="products" src="mousse2.jpg" alt="mousse bottle"/></a>
+                <figcaption>Herbal Essences Totally Twisted Curl Boosting Hair Mousse $8.00</figcaption>
+            </figure>
+        </div>    
+        <script src="script.js"></script>
+    </body>
+</html>
