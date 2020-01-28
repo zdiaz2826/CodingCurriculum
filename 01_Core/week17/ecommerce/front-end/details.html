@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>Details</title>
+        <link rel="stylesheet" type="text/css" href="normalized.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body> 
+        <!--Navigation Bar-->
+        <div class="topnav" id="myTopnav">
+            <a href="index.html" class="active">Home</a> 
+            <a href="products.html">Products</a>
+            <a href="search.html">Search</a>
+            <a href="contact.html">Contact</a>
+            <div class="dropdown">
+                <button class="dropbtn"></button>
+            </div> 
+            <a href="javascript:void(0);" class="icon" onclick="navFunction()">&#9776;</a>
+        </div> 
+        <!-- Page Content -->
+        <div class="details-content"> 
+            <figure>
+                <img class="productpic" src="image1.jpg" alt="shampoo bottle"/>
+                <figcaption class="fig1">The TRESemme Smooth & Silky Shampoo delivers intense moisturization where your hair needs it most, calming frizz and flyaways without weighing hair down. Light enough for daily use, this advanced smoothing system with Moroccan Argan oil cleanses and helps tame unruly hair, leaving it smooth and salon-soft.</figcaption>
+                <figcaption class="fig2">$5.00</figcaption>
+            </figure>
+            <!-- Quantity Select -->
+            <form class="details-form">
+                <select class="quantity">
+                    <option value="one">1</option>
+                    <option value="two">2</option>
+                    <option value="three">3</option>
+                    <option value="four">4</option>
+                </select>
+                <input class="addbtn" type="submit" value="Add to Cart">
+            </form>
+        </div>
+        <script src="indext.js"></script>
+    </body>
+</html>

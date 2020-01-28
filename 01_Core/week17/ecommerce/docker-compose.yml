@@ -1,0 +1,43 @@
+#Specifying the Docker version 
+version: "3.3"
+services: 
+  back-end:
+    container_name: hrprdcts_api
+    build:
+      context: back-end
+      dockerfile: Dockerfile
+    ports: 
+       - "8020:8020"
+    restart: always
+    networks: 
+      - backend
+    depends_on: 
+      - database
+      - front-end
+    tty: true
+  database:
+    container_name: hrprdcts_database
+    build:
+      context: database
+      dockerfile: Dockerfile
+    ports: 
+      - "3308:3308"
+    restart: always
+    networks: 
+      - backend
+    tty: true
+  front-end:
+    container_name: hrprdcts_web
+    build:
+      context: front-end
+      dockerfile: Dockerfile
+    ports:
+        - "80:80"
+    restart: always
+    networks: 
+      - backend
+    tty: true
+networks: 
+  backend:
+    driver: "bridge"
+
