@@ -1,5 +1,5 @@
 #Specifying the Docker version 
-version: "3.3"
+version: "3.7"
 services: 
   back-end:
     container_name: hrprdcts_api
@@ -15,29 +15,35 @@ services:
       - database
       - front-end
     tty: true
+#---------------------------------------------
   database:
     container_name: hrprdcts_database
     build:
       context: database
       dockerfile: Dockerfile
+    hostname: database
     ports: 
-      - "3308:3308"
+      - "3308:3306"
     restart: always
+    environment: 
+      MYSQL_DATABASE: products
+      MYSQL_ROOT_PASSWORD: Redventures123
+    command: --sql_mode="NO_ENGINE_SUBSTITUTION"
     networks: 
       - backend
-    tty: true
+#---------------------------------------------
   front-end:
     container_name: hrprdcts_web
     build:
       context: front-end
       dockerfile: Dockerfile
     ports:
-        - "80:80"
+      - "9090:80"
+    links: 
+      - "database"
     restart: always
     networks: 
       - backend
-    tty: true
 networks: 
   backend:
     driver: "bridge"
-

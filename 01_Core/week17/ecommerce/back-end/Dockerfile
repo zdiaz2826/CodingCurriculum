@@ -12,16 +12,13 @@ COPY . .
 
 # getting the sq0l driver 
 
-RUN go get github.com/go-sql-driver/mysql
+RUN go get -u github.com/go-sql-driver/mysql
 
 # Build the Go app
-RUN go build -o main .
+RUN go build main.go
 
 # Expose port 8080 to the outside world
 EXPOSE 8020
-
-#Expose Database Port
-EXPOSE 3306
 
 # Command to run the executable
 CMD ["./main"]

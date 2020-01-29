@@ -88,17 +88,21 @@ figcaption {
     text-align: center;
 }
 .select-text{
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
+}
+.filter {
+    display: grid;
+    justify-content: center;
 }
 /*Sort product items*/
 .products-container {
-display: grid;
-justify-content: center;
+    display: grid;
+    justify-content: center;
 } 
-.choose-product {
+/* .choose-product {
     border: 1px solid grey;
-}
+} */
 /*Products*/
 .products {
     align-items: center;

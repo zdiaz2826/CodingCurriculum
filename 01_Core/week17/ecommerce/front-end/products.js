@@ -1,16 +1,5 @@
-// calling getData on page load
 window.addEventListener("load", getData)
 
-class productInfo {
-  constructor(productId, productTypeId, productName, productPrice) {
-    this.productId = productId,
-    this.prductTypeId = productTypeId,
-    this.productName = productName,
-    this.productPrice = productPrice
-  }
-}
-
-//this function gets data from API then loops thorugh it to display the products
 function getData() {
   fetch('http://localhost:8020/products')
   .then(response => { 
@@ -27,25 +16,83 @@ function getData() {
     }
   })
 }
- 
-function filterProducts(productTypeId) {
-let rows = document.getElementById('empty-div').children
-  if (productTypeId == "all") {
-    for (let z = 0; z < rows.length; z++) {
-      rows[z].setAttribute('style',"display: block")
-        console.log('see all is working!')
-    }
-  } else {
-    for (let z = 0; z < rows.length; z++) {
-      if(rows[z].id != productTypeId) {
-        rows[z].setAttribute('style', 'display: none')
-      } else {
-        rows[z].setAttribute('style','display: inline-block')
-      }
-    }
-  } 
-}
 
+
+// var dropdown = document.querySelectorAll("#hairproducts")[0];
+
+// dropdown.addEventListener("change",function filterProducts(value) {
+//   var figureTag = document.getElementById('empty-div').querySelectorAll('figure');
+//   for(i = 0; i < figureTag.length; i++) {
+//     figureTag[i].style.display = "block";
+//   }
+//   if(value.target.value != figureTag.className) {
+//     for(i = 0; i < figureTag.length; i++) {
+//       figureTag[i].style.display = "none";
+//     }
+//   }else {
+//     figureTag[i].style.display = "block";
+//   }
+// })
+
+
+
+
+
+
+
+
+
+
+
+// // calling getData on page load
+// window.addEventListener("load", getData)
+
+// class productInfo {
+//   constructor(productId, productTypeId, productName, productPrice) {
+//     this.productId = productId,
+//     this.prductTypeId = productTypeId,
+//     this.productName = productName,
+//     this.productPrice = productPrice
+//   }
+// }
+
+// //this function gets data from API then loops thorugh it to display the products
+// function getData() {
+//   fetch('http://localhost:8020/products')
+//   .then(response => { 
+//       return response.json()
+//   })
+//   .then(data => {
+//     for (i = 0; i < data.length; i++) {
+//         var products = `<figure class="${data[i].description} id="${data[i].product_type_id}"> 
+//                             <a href="details.html"><img class="products" src="image${data[i].imgNum}.jpg" alt="${data[i].description}"/></a>
+//                             <figcaption>${data[i].product_name}</figcaption>
+//                             <figcaption>$${data[i].price}</figcaption>
+//                         </figure> `
+//         document.getElementById('empty-div').innerHTML+=products
+//     }
+//   })
+// }
+
+ 
+// function filterProducts(productTypeId) {
+
+// let rows = document.getElementById('empty-div')
+//   if (productTypeId === "all") {
+//     for (let z = 0; z < rows.length; z++) {
+//       rows[z].setAttribute('style',"display: block")
+//         console.log('see all is working!')
+//     }
+//   }else {
+//     for (let z = 0; z < rows.length; z++) {
+//       if(rows[z].id != productTypeId) {
+//         rows[z].setAttribute('style', 'display: none')
+//       } else {
+//         rows[z].setAttribute('style','display: inline-block')
+//       }
+//     }
+//   } 
+// }
 
 
 // function displayToppings() {
@@ -104,7 +151,13 @@ let rows = document.getElementById('empty-div').children
 
 // //fetched data  from API
 // function getData() {
-// fetch('http://localhost:8020/products')
+// fetch('http://localhost:8020/products' , {
+//     method: 'get',
+//     headers: {
+//         'Accept': 'application/json',
+//         'Content-Type': 'application/json',
+//     }
+// })
 // .then(response => { 
 //     return response.json()
 // })
@@ -227,7 +280,7 @@ let rows = document.getElementById('empty-div').children
 // )}
 
 
-// // // /*filter products*/
+// // // // /*filter products*/
 
 // var dropdown = document.querySelectorAll("#hairproducts")[0];
 

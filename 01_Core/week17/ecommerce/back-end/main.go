@@ -43,7 +43,7 @@ type Message struct {
 func main() {
 
 	//NEVER COMMIT REAL CREDENTIALS TO GITHUB.
-	database, err := sql.Open("mysql", "root:Redventures123@tcp(localhost:3306)/products?charset=utf8")
+	database, err := sql.Open("mysql", "root:Redventures123@tcp(database:3306)/products?charset=utf8")
 	if err != nil {
 		panic(err)
 	}

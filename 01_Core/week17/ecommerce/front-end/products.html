@@ -20,16 +20,16 @@
             <a href="javascript:void(0);" class="icon" onclick="navFunction()">&#9776;</a>
         </div>
         <!-- Sort Menu-->
-            <div class="select-product">
-                <label for="hairproducts" class="select-text">Choose Product:</label>
-                <select  id="hairproducts" name="hairproducts" class="choose-product" onChange="filterProducts(value)">
-                    <option value="all">See All</option>
-                    <option value="1">Shampoo</option>
-                    <option value="2">Conditioner</option>
-                    <option value="3">Hair Spray</option>
-                    <option value="4">Mousse</option>
-                </select>
-            </div>
+        <div class="filter">
+            <label for="hairproducts" class="select-text">Choose Product:</label>
+            <select class="select-product" id="hairproducts" name="hairproducts" class="choose-product">
+                <option value="all">See All</option>
+                <option value="1">Shampoo</option>
+                <option value="2">Conditioner</option>
+                <option value="3">Hair Spray</option>
+                <option value="4">Mousse</option>
+            </select>
+        </div>
         <!-- All Products -->
        <div id="empty-div" class="products-container">
             <!-- <figure class="shampoo">
