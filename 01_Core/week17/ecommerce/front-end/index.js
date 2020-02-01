@@ -1,3 +1,8 @@
+// calling getData on page load
+window.addEventListener("load", featuredProducts)
+
+
+
 /* Nav bar: Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 function navFunction() {
   var x = document.getElementById("myTopnav");
@@ -25,9 +30,8 @@ function showSlides() {
 }
 
 
-/* display featured products in home page*/
-document.addEventListener("DOMContentLoaded",featuredProducts);
 
+//Display featured products
 function featuredProducts() {
 fetch('http://localhost:8020/products')
 .then(response => { 

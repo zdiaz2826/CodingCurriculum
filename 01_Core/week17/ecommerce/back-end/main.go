@@ -5,10 +5,9 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
-
-	// Because we don't call mysql directly, but database/sql uses it, we need to import it and ignore it with the underscore in front
 	"net/http"
 
+	// Because we don't call mysql directly, but database/sql uses it, we need to import it and ignore it with the underscore in front
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -43,7 +42,7 @@ type Message struct {
 func main() {
 
 	//NEVER COMMIT REAL CREDENTIALS TO GITHUB.
-	database, err := sql.Open("mysql", "root:Redventures123@tcp(database:3306)/products?charset=utf8")
+	database, err := sql.Open("mysql", "root:Redventures123@tcp(localhost:3306)/products?charset=utf8")
 	if err != nil {
 		panic(err)
 	}
@@ -65,11 +64,12 @@ func main() {
 	}
 }
 
+// Cross Origin Resource Sharing. This allows the API to be accessible by JavaScript in-browser client-side code.
 func enableCors(w *http.ResponseWriter) {
 	(*w).Header().Set("Access-Control-Allow-Origin", "*")
 }
 
-//This is the handler for the root path "/"
+//This is the handler for the path "/products"
 func handleRequest(w http.ResponseWriter, r *http.Request) {
 
 	//if the HTTP method is a GET request, we want to get the products from the DB
@@ -110,11 +110,10 @@ func handleRequest(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		//Make the ResponseWriter into a json encoder, then encode the products slice into json and send the response.
 		json.NewEncoder(w).Encode(products)
-
 	}
 }
 
-//This is the handler for the root path "/"
+//This is the handler for the path "/contact"
 func handleRequest2(w http.ResponseWriter, r *http.Request) {
 	//If the request was an http POST request
 	if r.Method == http.MethodPost {

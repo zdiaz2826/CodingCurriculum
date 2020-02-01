@@ -22,8 +22,8 @@
         <!-- Sort Menu-->
         <div class="filter">
             <label for="hairproducts" class="select-text">Choose Product:</label>
-            <select class="select-product" id="hairproducts" name="hairproducts" class="choose-product">
-                <option value="all">See All</option>
+            <select class="select-product" id="hairproducts" onChange="filterProducts(value)">
+                <option value="-1">See All</option>
                 <option value="1">Shampoo</option>
                 <option value="2">Conditioner</option>
                 <option value="3">Hair Spray</option>
