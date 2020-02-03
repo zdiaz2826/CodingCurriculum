@@ -17,7 +17,7 @@ RUN go get -u github.com/go-sql-driver/mysql
 # Build the Go app
 RUN go build main.go
 
-# Expose port 8080 to the outside world
+# Expose port 8020 to the outside world
 EXPOSE 8020
 
 # Command to run the executable

@@ -1,34 +1,27 @@
 #Specifying the Docker version 
 version: "3.7"
 services: 
-  back-end:
-    container_name: hrprdcts_api
+  back-end:   # spins up my go code
+    container_name: hrprdcts_api  # name of the container in docker
     build:
-      context: back-end
-      dockerfile: Dockerfile
+      context: back-end #name of my folder
     ports: 
-       - "8020:8020"
-    restart: always
+       - "8020:8020" #exposing the port my API is listening on
     networks: 
-      - backend
-    depends_on: 
+      - backend # connecting all the services
+    depends_on: #API won't function unless the database and front end containers spin up
       - database
-      - front-end
-    tty: true
+      - front-end 
 #---------------------------------------------
   database:
-    container_name: hrprdcts_database
-    build:
-      context: database
-      dockerfile: Dockerfile
-    hostname: database
-    ports: 
-      - "3308:3306"
-    restart: always
     environment: 
-      MYSQL_DATABASE: products
+      MYSQL_DATABASE: products #name of database
       MYSQL_ROOT_PASSWORD: Redventures123
-    command: --sql_mode="NO_ENGINE_SUBSTITUTION"
+    container_name: hrprdcts_database # name of the container
+    build:
+      context: database #name of my folder
+    ports: 
+      - "3308:3306" #the connection in docker is 3308
     networks: 
       - backend
 #---------------------------------------------
@@ -36,14 +29,9 @@ services:
     container_name: hrprdcts_web
     build:
       context: front-end
-      dockerfile: Dockerfile
     ports:
-      - "9090:80"
-    links: 
-      - "database"
-    restart: always
+      - "9090:80" #mapping port 9090 to the web port. 
     networks: 
       - backend
 networks: 
   backend:
-    driver: "bridge"

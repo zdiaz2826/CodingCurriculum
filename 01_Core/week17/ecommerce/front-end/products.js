@@ -1,5 +1,24 @@
-// calling getData on page load
-window.addEventListener("load", getData);
+//calling the functions on page load
+window.onload = function () {
+  //calling the fuction that gets all the products
+  getData()
+}
+
+/******************** Nav bar *****************************/
+
+// Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon 
+function navFunction() {
+  //selects the navigation bar by ID
+  var x = document.getElementById("myTopnav");
+  // if the class name of x is "topnav" in the html file
+  if (x.className === "topnav") {
+    //add the responsive class, this resizes the nav bar as the screen shrinks or stretches.
+    x.className += " responsive";
+  } else {
+    //if the class name is not "topnav" make the class name "topnav"
+    x.className = "topnav";
+  }
+}
 
 //this function gets data from API then loops thorugh it to display the products
 function getData() {
@@ -21,6 +40,7 @@ function getData() {
     console.log(error)
   })
 }
+
 
 //function to filter products called in products.html line 25
 function filterProducts(value) {  //value is the category the user clicks on using drop down menu
@@ -47,16 +67,3 @@ function filterProducts(value) {  //value is the category the user clicks on usi
     }
   } 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

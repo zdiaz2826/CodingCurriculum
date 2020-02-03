@@ -1,6 +1,6 @@
 # Derived from official mysql image (our base image)
 FROM mysql
-
+#
 ENV MYSQL_DATABASE products
 
 # Expose port 3306 to the outside world

@@ -1,24 +1,41 @@
+/******************** Nav bar *****************************/
+// Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon 
+function navFunction() {
+  //selects the navigation bar by ID
+  var x = document.getElementById("myTopnav");
+  // if the class name of that element in the html is "topnav"
+  if (x.className === "topnav") {
+    //add the responsive class
+    x.className += " responsive";
+  } else {
+    //otherwise class name is "topbnav"
+    x.className = "topnav";
+  }
+}
+
+
 /******* CONTACT PAGE FORM VALIDATION  *******/
 
 //function is called on submit to check input fields
 function checkForm() {
+//creating a variable for each input field
 var firstName = document.forms["contact-form"]["first-name"].value;
 var lastName = document.forms["contact-form"]["last-name"].value;
 var eMail = document.forms["contact-form"]["e-mail"].value;
 var phoneNum = document.forms["contact-form"]["phone"].value;
 var textArea = document.forms["contact-form"]["comments"].value;
+  //checking to see if the urser left a blank input field
   if (firstName == '' || lastName == "" || eMail == "" || phoneNum == "" || textArea == ""){
+    //alerting the user if the input field is empty.
     alert("Error: Input field is empty!")
+    event.preventDefault(); //preventing the form from submiting
     return false;
   }
 }
 
 
 
-
 /*********** POST REQUEST ***********/
-
-
 
 //empty array to store value from check boxes
 var checkboxArr = []
@@ -66,7 +83,6 @@ function postData() {
 
  //POST request 
   fetch('http://localhost:8020/contact', {
-    mode: 'no-cors',
     method: "post",
     body: JSON.stringify({first_name:firstName, last_name:lastName, email:email, phone:phone, contact_method:contactMethod, how_did_you:howDidYou, message:message})
   }).then(res => {
@@ -74,6 +90,6 @@ function postData() {
   }).then(res => {
     console.log('Success')
   })
+  //redirecting the user to a thank you pager after the form is submitted.
+  location.assign("thanks.html")
 }
-
-

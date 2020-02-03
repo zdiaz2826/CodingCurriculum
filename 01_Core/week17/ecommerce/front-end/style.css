@@ -71,6 +71,7 @@
 .featured  {
     display: grid;
     justify-content: center;
+    transform: translateX(-50%);
 }
 .featured1, .featured2, .featured3 {
     width: 200px;
@@ -213,7 +214,15 @@ figcaption {
 #contact {
     margin-top: 3%;
 }
+/***********************************************************
+                        contact
+***********************************************************/
 
+
+.thanksTxt {
+    margin-top: 20%;
+    text-align: center;
+}
 
 
 /******************************************************************************************
