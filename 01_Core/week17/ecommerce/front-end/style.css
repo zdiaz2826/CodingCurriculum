@@ -71,9 +71,9 @@
 .featured  {
     display: grid;
     justify-content: center;
-    transform: translateX(-50%);
 }
 .featured1, .featured2, .featured3 {
+    margin-left: 15%;
     width: 200px;
     height: 200px;
 }
@@ -101,9 +101,7 @@ figcaption {
     display: grid;
     justify-content: center;
 } 
-/* .choose-product {
-    border: 1px solid grey;
-} */
+
 /*Products*/
 .products {
     align-items: center;
